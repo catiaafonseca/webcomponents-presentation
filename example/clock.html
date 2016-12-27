@@ -1,0 +1,93 @@
+  <template id="el-tmpl">
+	<style>
+		:host {
+			display: block;
+		 }
+		 div.clock {
+			 display: block;
+			 background: #000;
+		 }
+	</style>
+
+    <div id="my-clock">Clock</div>
+</template>
+
+<script defer>
+const doc = document.currentScript.ownerDocument;
+
+class Clock extends HTMLElement {
+
+	constructor () {
+		super();
+
+		this.state = {};
+		this.props = {};
+	}
+
+	set tz (c) {
+		let state = this.state;
+		state.tz = c;
+		this.setState(state);
+	}
+
+	get tz () {
+		return this.state.tz;
+	}
+
+	set date (d) {
+		let state = this.state;
+		state.date = d;
+		this.setState(state);
+	}
+
+	get date () {
+		return this.state.date;
+	}
+
+	attributeChangedCallback(attrName, oldVal, newVal) {
+		console.log('here');
+		this.state[attrName] = newVal;
+	}
+
+	connectedCallback () {
+
+		this._attachShadowDOM();
+		this.setState({
+			date: this.getAttribute('date'),
+			tz: this.getAttribute('tz')
+		});
+	}
+
+	setState (obj) {
+		this.state = obj;
+		this.render();
+	}
+	
+	refresh () {
+		this.render();
+	}
+
+	render () {
+		const d = this.state.date;
+		const tz = this.state.tz || "Europe/Lisbon";
+
+		if (d) {
+			let html = `<div class="clock">${d.toLocaleString('pt', {timeZone: tz})}</div>`;
+			
+			//let html = `render at ${date}`;
+			diff.innerHTML(this._root, html);
+		}
+	}
+
+	_attachShadowDOM() {
+		
+		const tmpl = doc.getElementById('el-tmpl');
+
+		// Attach shadow root
+		this._root = this.attachShadow({ mode: 'closed' });
+		this._root.appendChild(tmpl.content.cloneNode(true));
+	}
+}
+
+customElements.define('cool-clock', Clock);
+</script>

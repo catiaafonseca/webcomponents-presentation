@@ -55,30 +55,28 @@
 
     <web-slide class="clear-bg" data-transition="moveFromBottom">
       <h1>The problem</h1>
-      <p>We have a fetiche with complexity and abstraction</p>
-      <p>We build fragile over-enginneered solutions</p>
-      <p>We love our tools too much</p>
+      <h2>We have a fetish with complexity and abstraction</h2>
+      <h2>We build fragile over-enginneered solutions</h2>
+      <h2>We love our tools too much</h2>
     </web-slide>
 
     <web-slide class="clear-bg" data-transition="moveFromBottom">
-      <h1>The Better way(tm)</h1>
-      <p>KISS - Keep it simple stupid</p>
-      <p>Continuosly fight complexity and unnecessary abstractions</p>
-      <p>Reduce the number of dev and prod dependencies</p>
-      <p>Reduce the number of moving parts</p>
-      <p>Focus on the simplest solution that can work</p>
+      <h1>The Better way <small>(tm)</small></h1>
+      <h2>KISS - <u>Keep it simple stupid</u></h2>
+      <h2>Continuously fight complexity and unnecessary abstractions</h2>
+      <h2>Reduce the number of dev and prod dependencies</h2>
+      <h2>Reduce the number of moving parts</h2>
+      <h2>Focus on the simplest solution that can work</h2>
     </web-slide>
 
     <web-slide class="clear-bg" data-transition="moveFromBottom">
-      <h1>The Better way(tm)</h1>
-      <p>Learn and invest on the web platform core, instead of 'libraries'</p>
-      <ul>
-        <li>CSS instead of SASS/LESS/etc
-        <li>ES6 instead of Typescript/CoffeeScrit/JSX
-        <li>Web Components instead of React
-        <li>...
-      </ul>
-      <p>Platform features will outlive 'libraries'</p>
+      <h1>The Better way <small>(tm)</small></h1>
+      <p>Learn and invest on the web platform core, instead of 'libraries':</p>
+      <h2>CSS instead of SASS/LESS/etc</h2>
+      <h2>ES6 instead of Typescript/CoffeeScrit/JSX/etc</h2>
+      <h2>Web Components instead of React/Angular/etc</h2>
+      
+      <p style="margin-top: 2em">Platform features will outlive 'libraries'</p>
       <p>You are reducing the number of dependencies and the abstraction level</p>
     </web-slide>
 
@@ -89,30 +87,20 @@
     </web-slide>
 
     <web-slide class="clear-bg" data-transition="moveFromBottom">
-      <h1>Always use the right tool for the job</h1>
+      <h1 style="margin-top: 100px">Always use the right tool for the job</h1>
     </web-slide>
 
     <web-slide class="clear-bg" data-transition="moveFromBottom">
-      <h1>React is actually cool</h1>
-      <ul>
-        <li>React downstream dataflow
-      </ul>
+      <h1>Some ideas in React are actually awesome</h1>
+      <h2>React downstream dataflow</h2>
       <p>components are supposed to be immutable and the data within them unable to change. This way, they will only listen to data that is flowing from upstream and not data that is coming from each other. That is why React.js is known for the creation of canonical data sources that will stay synchronized across the components that will pay attention to it. It is what makes it the best framework for creating highly interactive web applications.</p>
-      <ul>
-        <li>React uses Virtual DOM
-      </ul>
+      <h2>React uses Virtual DOM</h2>
       <p>React uses a very efficient "diffing" algorithm for mutating the DOM only when necessary. It creates a lightweight tree from Javascript objects that mimic a DOM tree.</p>
     </web-slide>
 
     <web-slide class="clear-bg" data-transition="moveFromBottom">
       <h1>But you can have those using native browser web components</h1>
-      <h1>Let's a build a simple web components page with downstream data flow and virtual DOM "diffing"</h1>
-    </web-slide>
-
-    <web-slide class="clear-bg" data-transition="moveFromBottom">
-      <h1>But you can have those using native browser web components</h1>
-      <h1>Let's a build a simple web components page with downstream data flow and virtual DOM "diffing"</h1>
-
+      <h2>Let's a build a extremely simple web components page with downstream data flow and virtual DOM "diffing"</h2>
     </web-slide>
 
     <web-slide class="clear-bg" data-transition="moveFromBottom">
@@ -146,22 +134,23 @@
 
     <web-slide class="green-bg" data-transition="moveToLeft">
       <h1>The index.html</h1>
-      <pre is="lang-javascript" theme="dark">
-/* my-element.js */
-class MyElement extends HTMLElement {
-  // This gets called when the HTML parser sees your tag
-  constructor() {
-    super(); // always call super() first in the ctor.
-    this.msg = 'Hello, World!';
-  }
-  // Called when your element is inserted in the DOM or
-  // immediately after the constructor if it’s already in the DOM
-  connectedCallback() {
-    this.innerHTML = `<p>${this.msg}</p>`;
-  }
-}
-// This registers your new tag and associates it with your class
-window.customElements.define('my-element', MyElement);
+      <pre is="lang-markup" theme="dark">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width"&gt;
+  &lt;title&gt;Clock&lt;/title&gt;
+  &lt;link rel="import" href="clock.html"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;cool-clock&gt;&lt;/cool-clock&gt;
+    
+    &lt;cool-clock tz="Asia/Tokyo"&gt;&lt;/cool-clock&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
       </pre>
 
     </web-slide>
@@ -170,47 +159,60 @@ window.customElements.define('my-element', MyElement);
     <web-slide class="green-bg" data-transition="moveToLeft">
       <h1>The component.html</h1>
       <pre is="lang-javascript" theme="dark">
-/* my-element.js */
-class MyElement extends HTMLElement {
-  // This gets called when the HTML parser sees your tag
-  constructor() {
-    super(); // always call super() first in the ctor.
-    this.msg = 'Hello, World!';
-  }
-  // Called when your element is inserted in the DOM or
-  // immediately after the constructor if it’s already in the DOM
-  connectedCallback() {
-    this.innerHTML = `<p>${this.msg}</p>`;
-  }
-}
-// This registers your new tag and associates it with your class
-window.customElements.define('my-element', MyElement);
-      </pre>
+customElements.define('cool-clock', Clock);
+class Clock extends HTMLElement {
 
-    </web-slide>
+	constructor () {
+		super();
+		this.state = {};
+	}
+
+	connectedCallback () {
+		this._attachShadowDOM();
+		this.setState({
+			date: new Date(),
+			tz: this.getAttribute('tz')
+		});
+	}
+
+  </pre>
+  </web-slide>
 
     <web-slide class="green-bg" data-transition="moveToLeft">
-      <h1>The component.js</h1>
+      <h1>The component.html (2)</h1>
       <pre is="lang-javascript" theme="dark">
-/* my-element.js */
-class MyElement extends HTMLElement {
-  // This gets called when the HTML parser sees your tag
-  constructor() {
-    super(); // always call super() first in the ctor.
-    this.msg = 'Hello, World!';
-  }
-  // Called when your element is inserted in the DOM or
-  // immediately after the constructor if it’s already in the DOM
-  connectedCallback() {
-    this.innerHTML = `<p>${this.msg}</p>`;
-  }
+setState (obj) {
+  this.state = obj;
+	this.render();
 }
-// This registers your new tag and associates it with your class
-window.customElements.define('my-element', MyElement);
-      </pre>
 
-    </web-slide>
+render () {
+	const d = this.state.date;
+	const tz = this.state.tz || "Europe/Lisbon";
+	let	html = `<div class="clock">${d.toLocaleString('pt', {timeZone: tz})}</div>`;
 
+	diff.innerHTML(this._root, html);
+}
+  </pre>
+   </web-slide>
+
+    <web-slide class="green-bg" data-transition="moveToLeft">
+      <h1>The app.js</h1>
+      <pre is="lang-javascript" theme="dark">
+class App {
+	constructor () {
+		let clocks = document.querySelectorAll('cool-clock');
+		setInterval(_ => {
+			clocks.forEach((c) => {
+				c.date = new Date();
+			});
+			
+		}, 500);	
+	}
+}
+new App();
+  </pre>
+   </web-slide>
 
     <!-- Questions -->
     <web-slide class="purple-bg" data-transition="moveFromBottom">
