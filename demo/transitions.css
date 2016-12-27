@@ -127,12 +127,12 @@
     opacity: 0; } }
 
 web-slide[data-transition="moveToLeft"].forward-out, web-slide-title[data-transition="moveToLeft"].forward-out {
-  -webkit-animation: moveToLeft 0.7s ease-in-out both;
-  animation: moveToLeft 0.7s ease-in-out both; }
+  -webkit-animation: moveToLeft .7s ease-in-out both;
+  animation: moveToLeft .7s ease-in-out both; }
 
 web-slide[data-transition="moveToLeft"] + .forward-in, web-slide-title[data-transition="moveToLeft"] + .forward-in {
-  -webkit-animation: moveFromRight 0.7s ease both;
-  animation: moveFromRight 0.7s ease both; }
+  -webkit-animation: moveFromRight .7s ease both;
+  animation: moveFromRight .7s ease both; }
 
 @-webkit-keyframes moveFromTop {
   from {
@@ -263,12 +263,12 @@ web-slide[data-transition="moveToLeft"] + .forward-in, web-slide-title[data-tran
     opacity: 0; } }
 
 web-slide[data-transition="moveFromTop"].forward-out, web-slide-title[data-transition="moveFromTop"].forward-out {
-  -webkit-animation: moveToBottom 0.7s ease-in-out both;
-  animation: moveToBottom 0.7s ease-in-out both; }
+  -webkit-animation: moveToBottom .7s ease-in-out both;
+  animation: moveToBottom .7s ease-in-out both; }
 
 web-slide[data-transition="moveFromTop"] + .forward-in, web-slide-title[data-transition="moveFromTop"] + .forward-in {
-  -webkit-animation: moveFromTop 0.7s ease-in-out both;
-  animation: moveFromTop 0.7s ease-in-out both; }
+  -webkit-animation: moveFromTop .7s ease-in-out both;
+  animation: moveFromTop .7s ease-in-out both; }
 
 @-webkit-keyframes moveFromTop {
   from {
@@ -803,8 +803,8 @@ web-slide[data-transition="fall"].forward-out, web-slide-title[data-transition="
     opacity: 0; } }
 
 web-slide[data-transition="fadeIn"].forward-out, web-slide-title[data-transition="fadeIn"].forward-out {
-  -webkit-animation: fadeIn 0.5s ease-in-out both;
-  animation: fadeIn 0.5s ease-in-out both; }
+  -webkit-animation: fadeIn .5s ease-in-out both;
+  animation: fadeIn .5s ease-in-out both; }
 
 @-webkit-keyframes moveFromTop {
   from {
@@ -935,12 +935,12 @@ web-slide[data-transition="fadeIn"].forward-out, web-slide-title[data-transition
     opacity: 0; } }
 
 web-slide[data-transition="fadeInFromTop"].forward-out, web-slide-title[data-transition="fadeInFromTop"].forward-out {
-  -webkit-animation: fadeIn 0.5s ease-in-out both;
-  animation: fadeIn 0.5s ease-in-out both; }
+  -webkit-animation: fadeIn .5s ease-in-out both;
+  animation: fadeIn .5s ease-in-out both; }
 
 web-slide[data-transition="fadeInFromTop"] + .forward-in, web-slide-title[data-transition="fadeInFromTop"] + .forward-in {
-  -webkit-animation: moveFromTop 0.5s ease-in-out both;
-  animation: moveFromTop 0.5s ease-in-out both; }
+  -webkit-animation: moveFromTop .5s ease-in-out both;
+  animation: moveFromTop .5s ease-in-out both; }
 
 @-webkit-keyframes moveFromTop {
   from {
@@ -1071,9 +1071,9 @@ web-slide[data-transition="fadeInFromTop"] + .forward-in, web-slide-title[data-t
     opacity: 0; } }
 
 web-slide[data-transition="fadeInFromBottom"].forward-out, web-slide-title[data-transition="fadeInFromBottom"].forward-out {
-  -webkit-animation: fadeIn 0.5s ease-in-out both;
-  animation: fadeIn 0.5s ease-in-out both; }
+  -webkit-animation: fadeIn .5s ease-in-out both;
+  animation: fadeIn .5s ease-in-out both; }
 
 web-slide[data-transition="fadeInFromBottom"] + .forward-in, web-slide-title[data-transition="fadeInFromBottom"] + .forward-in {
-  -webkit-animation: moveFromBottom 0.5s ease-in-out both;
-  animation: moveFromBottom 0.5s ease-in-out both; }
+  -webkit-animation: moveFromBottom .5s ease-in-out both;
+  animation: moveFromBottom .5s ease-in-out both; }

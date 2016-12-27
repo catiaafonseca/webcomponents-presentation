@@ -3,99 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <title>web-presentation demo</title>
+  <link rel="stylesheet" href="reset.css" charset="utf-8">
   <link rel="stylesheet" href="styles.css" charset="utf-8">
   <link rel="stylesheet" href="transitions.css" media="screen" charset="utf-8">
   <link rel="import" href="web-presentation.html">
+  <link rel="stylesheet" href="timeline.css" charset="utf-8">
   <link rel='import' href='https://cdn.rawgit.com/ChristianKohler/PrismComponents/master/dist/prism-components.html'>
+  <script src="https://use.fontawesome.com/da88d1f637.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="timeline.js"></script>
 </head>
 <body>
   <web-presentation>
     <web-presentation-progress></web-presentation-progress>
     <web-presentation-keyboardcontrols></web-presentation-keyboardcontrols>
 
-    <web-slide-title data-transition="moveFromBottom">
-      <h1>&lt;&nbsp;web-presentation&nbsp;&gt;</h1>
-      <h2>Pure Webcomponents Presentation Framework</h2>
-      <p><small>Press Space to continue</small></p>
+    <web-slide-title class="clear-bg" data-transition="moveFromBottom">
+      <h1>React not needed...</h1>
+      <h2>Or, how I learned to stop worrying<br>and love the platform</h2>
+
+      <p>André Gonçalves</p>
+      <div class="stars"></div>
+      <div class="twinkling"></div>
+      <div class="clouds"></div>
     </web-slide-title>
 
-    <web-slide data-transition="fadeIn">
-      <h1>What is web-presentation?</h1>
-      <h2>A fast an simple way to build html presentations!</h2>
-      <p><b>web-presentation</b> is a set of webcomponents which let you create html presentations in a natural way. If you know HTML, you know web-presentation.</p>
-      <h2>Basic example with one slides</h2>
-      <pre is="lang-markup" theme="dark">
-&lt;web-presentation&gt;
-  &lt;web-slide&gt;
-    &lt;h1&gt;hello world&lt;/h1&gt;
-  &lt;/web-slide&gt;
-&lt;/web-presentation&gt;
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The problem</h1>
+      <img src="img/rauch.png" style="width: 100%; margin-top: 1em">
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The problem</h1>
+      <img src="img/config-files.png" style="width: 100%; margin-top: 1em">
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The problem</h1>
+      <img src="img/state-of-frontend-tooling.png" style="width: 100%; margin-top: 1em">
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The problem</h1>
+      <img src="img/hackaton-standards-for-success.png" style="width: 100%; margin-top: 1em">
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The problem</h1>
+      <img src="img/react-hello-world.png" style="width: 100%; margin-top: 1em">
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The problem</h1>
+      <p>We have a fetiche with complexity and abstraction</p>
+      <p>We build fragile over-enginneered solutions</p>
+      <p>We love our tools too much</p>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The Better way(tm)</h1>
+      <p>KISS - Keep it simple stupid</p>
+      <p>Continuosly fight complexity and unnecessary abstractions</p>
+      <p>Reduce the number of dev and prod dependencies</p>
+      <p>Reduce the number of moving parts</p>
+      <p>Focus on the simplest solution that can work</p>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>The Better way(tm)</h1>
+      <p>Learn and invest on the web platform core, instead of 'libraries'</p>
+      <ul>
+        <li>CSS instead of SASS/LESS/etc
+        <li>ES6 instead of Typescript/CoffeeScrit/JSX
+        <li>Web Components instead of React
+        <li>...
+      </ul>
+      <p>Platform features will outlive 'libraries'</p>
+      <p>You are reducing the number of dependencies and the abstraction level</p>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>But, but ...</h1>
+      <p>What are you talking about? React is cool and fast...</p>
+      <img src="img/speed-comparison.png" style="width: 100%; margin-top: 1em">
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>Always use the right tool for the job</h1>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>React is actually cool</h1>
+      <ul>
+        <li>React downstream dataflow
+      </ul>
+      <p>components are supposed to be immutable and the data within them unable to change. This way, they will only listen to data that is flowing from upstream and not data that is coming from each other. That is why React.js is known for the creation of canonical data sources that will stay synchronized across the components that will pay attention to it. It is what makes it the best framework for creating highly interactive web applications.</p>
+      <ul>
+        <li>React uses Virtual DOM
+      </ul>
+      <p>React uses a very efficient "diffing" algorithm for mutating the DOM only when necessary. It creates a lightweight tree from Javascript objects that mimic a DOM tree.</p>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>But you can have those using native browser web components</h1>
+      <h1>Let's a build a simple web components page with downstream data flow and virtual DOM "diffing"</h1>
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>But you can have those using native browser web components</h1>
+      <h1>Let's a build a simple web components page with downstream data flow and virtual DOM "diffing"</h1>
+
+    </web-slide>
+
+    <web-slide class="clear-bg" data-transition="moveFromBottom">
+      <h1>Why components?</h1>
+      <ul>
+        <li>Web standards and browsers are evolving, so should we.</li>
+        <li>Reusing components from different frameworks is challenging, but it shouldn't be.</li>
+        <li>They make excellent leaf nodes, and can be dropped in other framework components like DOM.</li>
+      </ul>
+      <h2>Web components are...</h2>
+      <ul>
+        <li><b>Composable:</b> combine them together creating new experiences.</li>
+        <li><b>Encapsulated:</b> isolate markup, styles, and behavior.</li>
+        <li><b>Reusable:</b> can be extended, allowing you easily create new components from existing ones.</li>
+      </ul>
+    </web-slide>
+
+
+    <!-- The Basics-->
+    <web-slide class="green-bg" data-transition="moveToLeft">
+      <h1>The basics...</h1>
+      <h2>Custom Elements</h2>
+      <p>Browser APIs to define new HTML elements</p>
+      <h2>HTML Templates</h2>
+      <p>The <b>&lt;template&gt;</b> tag now allows documents to contain inert chunks of DOM</p>
+      <h2>Shadow DOM</h2>
+      <p>Encapsulated DOM and styling</p>
+      <h2>HTML Imports</h2>
+      <p>Declarative methods of importing HTML documents into other documents</p>
+    </web-slide>
+
+    <web-slide class="green-bg" data-transition="moveToLeft">
+      <h1>The index.html</h1>
+      <pre is="lang-javascript" theme="dark">
+/* my-element.js */
+class MyElement extends HTMLElement {
+  // This gets called when the HTML parser sees your tag
+  constructor() {
+    super(); // always call super() first in the ctor.
+    this.msg = 'Hello, World!';
+  }
+  // Called when your element is inserted in the DOM or
+  // immediately after the constructor if it’s already in the DOM
+  connectedCallback() {
+    this.innerHTML = `<p>${this.msg}</p>`;
+  }
+}
+// This registers your new tag and associates it with your class
+window.customElements.define('my-element', MyElement);
       </pre>
+
     </web-slide>
 
-    <web-slide data-transition="moveToLeft">
-      <h1>Features</h1>
-      <h2>Fast</h2>
-      <p>Web components are native</p>
-      <h2>No 3rd party dependencies</h2>
-      <p>Written in pure javascript</p>
-      <h2>Extendable and customizable</h2>
-      <p>Thanks to a modular architecture. The keyboard controls for example are not part of the core.</p>
-      <p>You can customize web-presentation tags like you would with any other html tag.</p>
-    </web-slide>
 
-    <web-slide data-transition="moveToLeft">
-      <h1>Fragments</h1>
-      <h2>Step by step</h2>
-      <div>
-        <p>
-          <span data-enter="1">Fragments are a very easy way</span>
-          <span data-enter="2">to display parts</span>
-          <span data-enter="2">of a slide</span>
-          <span data-enter="3">step by step.</span></p>
-          <pre data-enter="4" is="lang-markup" theme="dark">
-&lt;span data-enter="1"&gt;Fragments are a very easy way&lt;span&gt;
-&lt;span data-enter="2"&gt;to display parts&lt;span&gt;
-&lt;span data-enter="2"&gt;of a slide&lt;span&gt;
-&lt;span data-enter="3"&gt;step by step.&lt;span&gt;
-          </pre>
-      </div>
-      
-      <div data-enter="5">
-        <p>..or to hide</p>
-        <pre data-exit="11" is="lang-markup" theme="dark">
-&lt;h1 data-exit="10"&gt;Great!!&lt;h1&gt;
-        </pre>
-      </div>
-    </web-slide>
-
-    <web-slide data-transition="fall">
-      <h1>Getting started</h1>
-      <h2>Link one file and start creating your presentation</h2>
-      <p>To get started just include web-presentation.html in your header.</p>
-      <p>Use the web-presentation and web-slide tags to build your slide.</p>
-      <pre is="lang-markup" theme="dark">
-  &lt;link rel="import" href="web-presentation.html"&gt;
+    <web-slide class="green-bg" data-transition="moveToLeft">
+      <h1>The component.html</h1>
+      <pre is="lang-javascript" theme="dark">
+/* my-element.js */
+class MyElement extends HTMLElement {
+  // This gets called when the HTML parser sees your tag
+  constructor() {
+    super(); // always call super() first in the ctor.
+    this.msg = 'Hello, World!';
+  }
+  // Called when your element is inserted in the DOM or
+  // immediately after the constructor if it’s already in the DOM
+  connectedCallback() {
+    this.innerHTML = `<p>${this.msg}</p>`;
+  }
+}
+// This registers your new tag and associates it with your class
+window.customElements.define('my-element', MyElement);
       </pre>
+
     </web-slide>
 
-    <web-slide data-transition="newspaper">
-      <h1>Transitions</h1>
-      <p>
-        web-presentation comes with great transitions out of the box.
-      </p>
-      <h2>Usage</h2>
-      <p>
-        Just set the transition attribute on a slide
-      </p>
-      <pre is="lang-markup" theme="dark">
-  &lt;web-slide data-transition="moveToLeft"&gt;
+    <web-slide class="green-bg" data-transition="moveToLeft">
+      <h1>The component.js</h1>
+      <pre is="lang-javascript" theme="dark">
+/* my-element.js */
+class MyElement extends HTMLElement {
+  // This gets called when the HTML parser sees your tag
+  constructor() {
+    super(); // always call super() first in the ctor.
+    this.msg = 'Hello, World!';
+  }
+  // Called when your element is inserted in the DOM or
+  // immediately after the constructor if it’s already in the DOM
+  connectedCallback() {
+    this.innerHTML = `<p>${this.msg}</p>`;
+  }
+}
+// This registers your new tag and associates it with your class
+window.customElements.define('my-element', MyElement);
       </pre>
+
     </web-slide>
 
-    <web-slide>
-      <h1>Let's get started.</h1>
-      <a href="https://github.com/ChristianKohler/web-presentation">https://github.com/ChristianKohler/web-presentation</a>
+
+    <!-- Questions -->
+    <web-slide class="purple-bg" data-transition="moveFromBottom">
+      <h1>Questions?</h1>
+      <h2>André Gonçalves (@andregoncalves)</h2>
+
     </web-slide>
 
   </web-presentation>
